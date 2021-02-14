@@ -31,7 +31,7 @@
             
             Player.RemoveOnePicklock();
             
-            if (!Player.HasPicklocks())
+            if (Player.HasPicklocks())
                 ActivePicklock = new Picklock();
             else
                 EndProcess();
