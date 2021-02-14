@@ -1,4 +1,5 @@
 ﻿using System;
+using LockpickingMinigame.GameLogic;
 
 namespace LockpickingMinigame
 {

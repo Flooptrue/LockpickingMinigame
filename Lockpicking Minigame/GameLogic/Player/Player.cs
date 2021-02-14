@@ -1,4 +1,4 @@
-﻿namespace LockpickingMinigame
+﻿namespace LockpickingMinigame.GameLogic
 {
     public class Player
     {
