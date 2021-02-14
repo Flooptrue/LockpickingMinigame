@@ -19,6 +19,9 @@ namespace LockpickingMinigame.GameLogic
 
         public bool Pick(Picklock picklock)
         {
+            if (picklock.IsBroken)
+                throw new Exception("Attempt to pick lock with broken picklock.");
+                    
             if (!IsOpened)
                 IsOpened = _successZone.IsSuccess(picklock.TiltAngle);
 
