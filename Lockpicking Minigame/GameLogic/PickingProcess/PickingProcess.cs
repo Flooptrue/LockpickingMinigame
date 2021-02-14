@@ -2,39 +2,53 @@
 {
     public class PickingProcess
     {
-        private readonly Player _player;
-        private readonly Lock _lock;
-        private Picklock _activePicklock;
+        public Player Player { get; }
+        public  Lock Lock { get; }
+        public bool IsActive { get; private set; }
+        public Picklock ActivePicklock { get; private set; }
 
         public PickingProcess(Player player, Lock lockInstance)
         {
-            _player = player;
-            _lock = lockInstance;
-            _activePicklock = new Picklock();
+            Player = player;
+            Lock = lockInstance;
+            IsActive = player.HasPicklocks();
+            ActivePicklock = IsActive ? new Picklock() : null;
         }
 
-        public bool TryToPick()
+        public void Pick()
         {
-            if (_player.PicklocksQuantity <= 0)
-                return false;
+            if (!IsActive)
+                return;
+
+            if (Lock.Pick(ActivePicklock))
+            {
+                EndProcess();
+                return;
+            }
+
+            if (!ActivePicklock.IsBroken) 
+                return;
             
-            if (_player.PicklocksQuantity > 0 && _activePicklock.IsBroken)
-                _activePicklock = new Picklock();
-
-            var pickResult = _lock.Pick(_activePicklock);
-
-            if (_activePicklock.IsBroken)
-                _player.RemoveOnePicklock();
-
-            return pickResult;
+            Player.RemoveOnePicklock();
+            
+            if (!Player.HasPicklocks())
+                ActivePicklock = new Picklock();
+            else
+                EndProcess();
         }
 
         public void ChangePicklockAngle(double angle)
         {
-            if (_player.PicklocksQuantity <= 0)
+            if (!IsActive)
                 return;
 
-            _activePicklock.TiltAngle = angle;
+            ActivePicklock.TiltAngle = angle;
+        }
+
+        private void EndProcess()
+        {
+            IsActive = false;
+            ActivePicklock = null;
         }
     }
 }
