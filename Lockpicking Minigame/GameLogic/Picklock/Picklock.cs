@@ -1,4 +1,4 @@
-﻿namespace Lockpicking_Minigame
+﻿namespace LockpickingMinigame
 {
     public class Picklock
     {

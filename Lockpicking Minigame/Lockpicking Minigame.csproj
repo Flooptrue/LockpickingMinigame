@@ -3,7 +3,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <RootNamespace>Lockpicking_Minigame</RootNamespace>
+        <RootNamespace>LockpickingMinigame</RootNamespace>
+        <AssemblyName>LockpickingMinigame</AssemblyName>
     </PropertyGroup>
 
 </Project>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Учеба\\Мага. Часть 1. Oh shit, here we go again\\Современный платформы программирования\\Лаба 1\\Lockpicking Minigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {}
+    "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {}
   },
   "projects": {
-    "E:\\Учеба\\Мага. Часть 1. Oh shit, here we go again\\Современный платформы программирования\\Лаба 1\\Lockpicking Minigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {
+    "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Учеба\\Мага. Часть 1. Oh shit, here we go again\\Современный платформы программирования\\Лаба 1\\Lockpicking Minigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
-        "projectName": "Lockpicking Minigame",
-        "projectPath": "E:\\Учеба\\Мага. Часть 1. Oh shit, here we go again\\Современный платформы программирования\\Лаба 1\\Lockpicking Minigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
+        "projectUniqueName": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
+        "projectName": "LockpickingMinigame",
+        "projectPath": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
         "packagesPath": "C:\\Users\\Артем Венгер\\.nuget\\packages\\",
-        "outputPath": "E:\\Учеба\\Мага. Часть 1. Oh shit, here we go again\\Современный платформы программирования\\Лаба 1\\Lockpicking Minigame\\Lockpicking Minigame\\obj\\",
+        "outputPath": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

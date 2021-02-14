@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lockpicking_Minigame
+namespace LockpickingMinigame
 {
     public class SuccessZone
     {

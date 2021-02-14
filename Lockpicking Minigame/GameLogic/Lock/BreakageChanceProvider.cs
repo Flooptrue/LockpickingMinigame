@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lockpicking_Minigame
+namespace LockpickingMinigame
 {
     public static class BreakageChanceProvider
     {

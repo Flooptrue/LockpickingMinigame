@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lockpicking_Minigame
+namespace LockpickingMinigame
 {
     class Program
     {

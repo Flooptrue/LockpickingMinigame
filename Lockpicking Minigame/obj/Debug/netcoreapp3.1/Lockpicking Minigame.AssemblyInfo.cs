@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Lockpicking Minigame")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LockpickingMinigame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Lockpicking Minigame")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Lockpicking Minigame")]
+[assembly: System.Reflection.AssemblyProductAttribute("LockpickingMinigame")]
+[assembly: System.Reflection.AssemblyTitleAttribute("LockpickingMinigame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
