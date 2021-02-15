@@ -20,23 +20,16 @@ namespace LockpickingMinigame
 
         private static void StartPickingProcess(Player player, Lock @lock)
         {
+            var ui = new ConsoleUI();
             var process = player.StartPicking(@lock);
+            
             while (process.IsActive)
             {
-                PrintStateInfo(process);
+                ui.DisplayBeforeKeyPressInfo(process);
                 HandleKeystrokes(process);
+                ui.DisplayAfterKeyPressInfo(process);
             }
-            PrintFinalInfo(process);
-        }
-
-        private static void PrintStateInfo(PickingProcess pickingProcess)
-        {
-            var playerInfo = $"У игрока {pickingProcess.Player.PicklocksQuantity} отмычек;";
-            var picklockInfo = $"Текущее положение отмычки {pickingProcess.ActivePicklock.TiltAngle} градусов;";
-            
-            Console.Clear();
-            Console.WriteLine(playerInfo);
-            Console.WriteLine(picklockInfo);
+            ui.DisplayFinalInfo(process);
         }
 
         private static void HandleKeystrokes(PickingProcess pickingProcess)
@@ -56,31 +49,6 @@ namespace LockpickingMinigame
                     pickingProcess.Pick();
                     break;
             }
-        }
-        
-        private static void PrintFinalInfo(PickingProcess pickingProcess)
-        {
-            string resultMessage;
-            if (!pickingProcess.Player.HasPicklocks())
-            {
-                resultMessage = "У игрока закончились отмычки!";
-            }
-            else if (pickingProcess.Lock.IsOpened)
-            {
-                resultMessage = "Замок взломан!";
-            }
-            else 
-            {
-                resultMessage = "Непонятная причина!";
-            }
-            
-            var playerInfo = $"У игрока {pickingProcess.Player.PicklocksQuantity} отмычек;";
-            var lockInfo = pickingProcess.Lock.IsOpened ? "Замок открыт;" : "Замок закрыт;";
-
-            Console.WriteLine("-------------------------------------------------------------------");
-            Console.WriteLine(resultMessage);
-            Console.WriteLine(playerInfo);
-            Console.WriteLine(lockInfo);
         }
     }
 }
