@@ -5,14 +5,22 @@ namespace LockpickingMinigame.UI.ConsoleUI
 {
     public class UIPainter
     {
+        private readonly MessagePrinter _playerInfo;
+        private readonly MessagePrinter _picklockInfo;
+
+        public UIPainter()
+        {
+            _playerInfo= new MessagePrinter("У игрока [n] отмычек;"," 00;-00;");
+            _picklockInfo= new MessagePrinter("Текущее положение отмычки [n] градусов;", " 000;-000;");
+        }
+
         public void DisplayBeforeKeyPressInfo(PickingProcess pickingProcess)
         {
-            var playerInfo = $"У игрока {pickingProcess.Player.PicklocksQuantity} отмычек;";
-            var picklockInfo = $"Текущее положение отмычки {pickingProcess.ActivePicklock.TiltAngle} градусов;";
+            var picklocksQuantity = new[] {pickingProcess.Player.PicklocksQuantity};
+            var tiltAngle = new[] {pickingProcess.ActivePicklock.TiltAngle};
             
-            Console.Clear();
-            Console.WriteLine(playerInfo);
-            Console.WriteLine(picklockInfo);
+            _playerInfo.Print(picklocksQuantity);
+            _picklockInfo.Print(tiltAngle);
         }
 
         public void DisplayAfterKeyPressInfo(PickingProcess pickingProcess)
@@ -30,6 +38,8 @@ namespace LockpickingMinigame.UI.ConsoleUI
 
         public void DisplayFinalInfo(PickingProcess pickingProcess)
         {
+            Console.WriteLine("-------------------------------------------------------------------");
+            
             string resultMessage;
             if (!pickingProcess.Player.HasPicklocks())
             {
