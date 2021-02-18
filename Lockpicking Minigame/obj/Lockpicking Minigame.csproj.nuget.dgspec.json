@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {}
+    "C:\\Projects\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {
+    "C:\\Projects\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
+        "projectUniqueName": "C:\\Projects\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
         "projectName": "LockpickingMinigame",
-        "projectPath": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
-        "packagesPath": "C:\\Users\\Артем Венгер\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\GitHub\\LockpickingMinigame\\Lockpicking Minigame\\obj\\",
+        "projectPath": "C:\\Projects\\LockpickingMinigame\\Lockpicking Minigame\\Lockpicking Minigame.csproj",
+        "packagesPath": "C:\\Users\\floop\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\LockpickingMinigame\\Lockpicking Minigame\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Артем Венгер\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\floop\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
