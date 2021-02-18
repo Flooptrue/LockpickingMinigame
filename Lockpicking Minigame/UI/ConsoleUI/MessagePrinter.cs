@@ -6,10 +6,10 @@ namespace LockpickingMinigame.UI.ConsoleUI
     public class MessagePrinter
     {
         private readonly string[] _messageParts;
-        private double[] _numbers;
-        private bool[] _isChanged;
-        private int[] _numbersPosition;
-        private string _numberFormat;
+        private readonly bool[] _isChanged;
+        private readonly double[] _numbers;
+        private readonly int[] _numbersPosition;
+        private readonly string _numberFormat;
         private readonly int _row;
         private bool _isPrinted;
         
@@ -46,7 +46,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
                     continue;
                 
                 _isChanged[i] = true;
-                _numbers = numbers;
+                _numbers[i] = numbers[i];
             }
         }
 
