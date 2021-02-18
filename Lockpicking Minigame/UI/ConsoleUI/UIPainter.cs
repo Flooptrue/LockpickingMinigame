@@ -1,9 +1,9 @@
 ﻿using System;
 using LockpickingMinigame.GameLogic;
 
-namespace LockpickingMinigame
+namespace LockpickingMinigame.UI.ConsoleUI
 {
-    public class ConsoleUI
+    public class UIPainter
     {
         public void DisplayBeforeKeyPressInfo(PickingProcess pickingProcess)
         {

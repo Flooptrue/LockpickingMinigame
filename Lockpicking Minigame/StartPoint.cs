@@ -1,5 +1,6 @@
 ﻿using System;
 using LockpickingMinigame.GameLogic;
+using LockpickingMinigame.UI.ConsoleUI;
 
 namespace LockpickingMinigame
 {
@@ -20,7 +21,7 @@ namespace LockpickingMinigame
 
         private static void StartPickingProcess(Player player, Lock @lock)
         {
-            var ui = new ConsoleUI();
+            var ui = new UIPainter();
             var process = player.StartPicking(@lock);
             
             while (process.IsActive)
