@@ -10,7 +10,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
         private readonly double[] _numbers;
         private readonly int[] _numbersPosition;
         private readonly string _numberFormat;
-        private readonly int _row;
+        private int _row;
         private bool _isPrinted;
         
         public MessagePrinter(string message, string numberFormat)
@@ -19,9 +19,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
             _numbers = new double[_messageParts.Length - 1];
             _isChanged = new bool[_messageParts.Length - 1];
             _numbersPosition = new int[_messageParts.Length - 1];
-            _numberFormat = numberFormat;// использовать подобный формат "##;(##);**Zero**";
-            _row = Console.CursorTop;
-            Console.WriteLine();
+            _numberFormat = numberFormat;
         }
         
         public void Print(double[] numbers)
@@ -52,8 +50,8 @@ namespace LockpickingMinigame.UI.ConsoleUI
 
         private void PrintMessage()
         {
-            var (left, top) = Console.GetCursorPosition();
-            Console.SetCursorPosition(0,_row);
+            _row = Console.CursorTop;
+            Console.SetCursorPosition(0, _row);
             
             var message = new StringBuilder();
             for (var i = 0; i < _numbers.Length; i++)
@@ -69,7 +67,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
             Console.Write(message);
             _isPrinted = true;
             
-            Console.SetCursorPosition(left, top);
+            Console.SetCursorPosition(0, _row + 1);
         }
         
         private void UpdateNumbersInMessage()
