@@ -13,6 +13,8 @@ namespace LockpickingMinigame
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+            
             var @lock = new Lock(DifficultyLevel);
             var player = new Player(StartPicklocksQuantity);
             
@@ -41,9 +43,11 @@ namespace LockpickingMinigame
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.LeftArrow:
+                    Console.Write("\b");
                     pickingProcess.ChangePicklockAngle(currentAngle - StepForAngle);
                     break;
                 case ConsoleKey.RightArrow:
+                    Console.Write("\b");
                     pickingProcess.ChangePicklockAngle(currentAngle + StepForAngle);
                     break;
                 case ConsoleKey.Enter:
