@@ -3,7 +3,7 @@ using System.Text;
 
 namespace LockpickingMinigame.UI.ConsoleUI
 {
-    public class MessagePrinter
+    public class UpdatableInfo
     {
         private readonly string[] _messageParts;
         private readonly bool[] _isChanged;
@@ -13,11 +13,11 @@ namespace LockpickingMinigame.UI.ConsoleUI
         private int _row;
         private bool _isPrinted;
         
-        public MessagePrinter(string message, string numberFormat)
+        public UpdatableInfo(string message, string numberFormat)
         {
             _messageParts = message.Split("[n]");
-            _numbers = new double[_messageParts.Length - 1];
             _isChanged = new bool[_messageParts.Length - 1];
+            _numbers = new double[_messageParts.Length - 1];
             _numbersPosition = new int[_messageParts.Length - 1];
             _numberFormat = numberFormat;
         }
@@ -51,8 +51,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
         private void PrintMessage()
         {
             _row = Console.CursorTop;
-            Console.SetCursorPosition(0, _row);
-            
+
             var message = new StringBuilder();
             for (var i = 0; i < _numbers.Length; i++)
             {
@@ -77,7 +76,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
             for (var i = 0; i < _numbers.Length; i++)
             {
                 if (!_isChanged[i])
-                    return;
+                    continue;
                 
                 Console.SetCursorPosition(_numbersPosition[i], _row);
                 Console.Write(_numbers[i].ToString(_numberFormat));
