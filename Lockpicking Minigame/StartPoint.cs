@@ -52,6 +52,9 @@ namespace LockpickingMinigame
                 case ConsoleKey.Enter:
                     pickingProcess.Pick();
                     break;
+                default:
+                    Console.Write("\b");
+                    break;
             }
         }
     }
