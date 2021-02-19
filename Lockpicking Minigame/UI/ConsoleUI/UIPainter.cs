@@ -14,52 +14,23 @@ namespace LockpickingMinigame.UI.ConsoleUI
             _picklockInfo= new UpdatableInfo("Текущее положение отмычки [n] градусов;", " 000;-000;");
         }
 
-        public void DisplayBeforeKeyPressInfo(PickingProcess pickingProcess)
+        public void Initialize(PickingProcess pickingProcess)
         {
             var picklocksQuantity = new[] {pickingProcess.Player.PicklocksQuantity};
             var tiltAngle = new[] {pickingProcess.ActivePicklock.TiltAngle};
             
             _playerInfo.Print(picklocksQuantity);
             _picklockInfo.Print(tiltAngle);
+            Console.WriteLine("--------------------------------------------------------");
         }
 
-        public void DisplayAfterKeyPressInfo(PickingProcess pickingProcess)
+        public void Update(PickingProcess pickingProcess)
         {
-            // if (!_shouldPrintLockPickingResult)
-            //     return;
-            //
-            // var lockStatus = pickingProcess.Lock.IsOpened 
-            //     ? "Замок открыт!" 
-            //     : $"Замок повернулся на n %.";
-            //
-            // Console.WriteLine("-------------------------------------------------------------------");
-            // Console.WriteLine(lockStatus);
-        }
-
-        public void DisplayFinalInfo(PickingProcess pickingProcess)
-        {
-            Console.WriteLine("-------------------------------------------------------------------");
+            var picklocksQuantity = new[] {pickingProcess.Player.PicklocksQuantity};
+            var tiltAngle = new[] {pickingProcess.ActivePicklock.TiltAngle};
             
-            string resultMessage;
-            if (!pickingProcess.Player.HasPicklocks())
-            {
-                resultMessage = "У игрока закончились отмычки!";
-            }
-            else if (pickingProcess.Lock.IsOpened)
-            {
-                resultMessage = "Замок взломан!";
-            }
-            else 
-            {
-                resultMessage = "Непонятная причина!";
-            }
-            
-            var playerInfo = $"У игрока {pickingProcess.Player.PicklocksQuantity} отмычек;";
-            var lockInfo = pickingProcess.Lock.IsOpened ? "Замок открыт;" : "Замок закрыт;";
-            
-            Console.WriteLine(resultMessage);
-            Console.WriteLine(playerInfo);
-            Console.WriteLine(lockInfo);
+            _playerInfo.Print(picklocksQuantity);
+            _picklockInfo.Print(tiltAngle);
         }
     }
 }

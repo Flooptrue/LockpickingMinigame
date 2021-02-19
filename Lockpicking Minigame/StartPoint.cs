@@ -25,14 +25,13 @@ namespace LockpickingMinigame
         {
             var ui = new UIPainter();
             var process = player.StartPicking(@lock);
-            
+
+            ui.Initialize(process);
             while (process.IsActive)
             {
-                ui.DisplayBeforeKeyPressInfo(process);
                 HandleKeystrokes(process);
-                ui.DisplayAfterKeyPressInfo(process);
+                ui.Update(process);
             }
-            ui.DisplayFinalInfo(process);
         }
 
         private static void HandleKeystrokes(PickingProcess pickingProcess)
