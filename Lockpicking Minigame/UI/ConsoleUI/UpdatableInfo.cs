@@ -58,6 +58,7 @@ namespace LockpickingMinigame.UI.ConsoleUI
                 message.Append(_messageParts[i]);
                 _numbersPosition[i] = message.Length;
                 message.Append(_numbers[i].ToString(_numberFormat));
+                _isChanged[i] = false;
 
                 if (i == _numbers.Length - 1)
                     message.Append(_messageParts[i + 1]);
@@ -80,8 +81,9 @@ namespace LockpickingMinigame.UI.ConsoleUI
                 
                 Console.SetCursorPosition(_numbersPosition[i], _row);
                 Console.Write(_numbers[i].ToString(_numberFormat));
+                _isChanged[i] = false;
             }
-            
+
             Console.SetCursorPosition(left, top);
         }
     }
