@@ -5,13 +5,13 @@ namespace LockpickingMinigame.UI.ConsoleUI
 {
     public class UIPainter
     {
-        private readonly UpdatableInfo _playerInfo;
-        private readonly UpdatableInfo _picklockInfo;
+        private readonly UpdatableInfoWithNumbers _playerInfo;
+        private readonly UpdatableInfoWithNumbers _picklockInfo;
 
         public UIPainter()
         {
-            _playerInfo= new UpdatableInfo("У игрока [n] отмычек;"," 00;-00;");
-            _picklockInfo= new UpdatableInfo("Текущее положение отмычки [n] градусов;", " 000;-000;");
+            _playerInfo = new UpdatableInfoWithNumbers("У игрока [n] отмычек;"," 00;-00;");
+            _picklockInfo = new UpdatableInfoWithNumbers("Текущее положение отмычки [n] градусов;", " 000;-000;");
         }
 
         public void Initialize(PickingProcess pickingProcess)
